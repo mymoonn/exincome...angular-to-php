@@ -1,0 +1,33 @@
+.left{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+  
+  .left td,th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .left tr:nth-child(even){background-color:rgb(207, 158, 206) ;}
+  
+  .left tr:hover {background-color: #ddd;}
+  
+  .left td,th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: right;
+    background-color:orchid;
+    color: white;
+    margin: 30px;
+  }
+  footer {
+    text-align: center;
+    padding: 3px;
+    background-color:orchid;
+    color: white;
+  }
+
+
+  

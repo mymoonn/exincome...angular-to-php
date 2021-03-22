@@ -1,0 +1,64 @@
+<br>
+<br>
+<br>
+<h1 class="cate-header">Your Transactions</h1><br><br>
+<br>
+<div class="main">
+    <div class="right">
+    
+   <!-- <b>Choose your date :</b> <input type="date" placeholder="select Date" [(ngModel)]="udate"><br><br> -->
+   <b>Choose your type :</b>  <input type="radio" value="income" [(ngModel)]="utype" (click)="incomeFunction()">
+                       <label for="income">INCOME</label>
+                       <input type="radio" value="expense" [(ngModel)]="utype" (click)="expenseFunction()">
+                       <label for="expense">EXPENSE</label><br><br>
+ <div *ngIf="incomee"  >
+                                        <select [(ngModel)]="ucate">
+                                            <option *ngFor="let income of list">
+                                                {{income.income}}
+                                            </option>
+                                        </select>
+                                    </div> 
+                                    <div *ngIf="expene">
+                                        <select [(ngModel)]="ucate">
+                                            <option *ngFor="let expens of expenses">
+                                                {{expens.expense}}
+                                            </option>
+                                        </select>
+                                    </div><br>
+   <b>Enter your Description : </b><input type="text" placeholder="Description" [(ngModel)]="udesc"><br><br> 
+   <b>Enter your Amount : </b><input type="number" placeholder="Amount" [(ngModel)]="uamt"><br><br>
+    <button (click)="add()">ADD</button> &nbsp;
+     <!-- <button (click)="refresh()">DELETE ALL</button> &nbsp;  
+     -->
+
+<div class="left"></div>
+
+    <table>
+        <tr>
+            <th>S.NO</th>
+            <!-- <th>DATE</th> -->
+            <th>TYPE</th>
+            <!-- <th>CATEGORIES</th>-->
+            <th>DESCRIPTION</th> 
+            <th>AMOUNT</th>
+            <th>ACTION</th>
+        </tr>
+        <tr *ngFor="let user of exincome;let i = index">
+            <td>{{i+1}}</td>
+             <!-- <td class="date">{{user.date}}</td> -->
+            <td>{{user.TYPE}}</td> 
+            <!-- <td>{{user.categories}}</td>-->
+            <td>{{user.DESCRIPTION}}</td> 
+            <td>{{user.AMOUNT}}</td>
+            <td><button (click)="delete(i)">DELETE</button></td>
+        </tr>
+    </table>
+   
+</div>
+
+<br>
+<div >
+<h1 class="result">Your Income total : {{totalIncome}}</h1>
+<h1 class="result">Your Expense total : {{totalExpense}}</h1>
+<h1 class="result">Your Balance is : {{totalBalance}}</h1>
+</div>
